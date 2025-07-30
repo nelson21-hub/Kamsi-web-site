@@ -1,0 +1,158 @@
+/* === RESET & BASE === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* === LAYOUT GÉNÉRAL === */
+body {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: #007bff;
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 1.5rem;
+  flex: 0 0 auto;
+}
+main {
+  flex: 1 0 auto;
+  display: flex;
+  overflow: hidden;            /* empêche le débordement */
+  background: #f2f3f8;         /* teinte douce derrière */
+}
+.footer {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  color: #666;
+}
+
+/* === SPLIT IMAGE / FORM === */
+.regform-split {
+  display: flex;
+  width: 100%;
+}
+.regform-image {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.regform-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('Photo/ECG-blog_how-to-interpret_1.png') center/cover no-repeat;
+  filter: brightness(0.8);
+}
+.regform {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;               /* espace autour du formulaire */
+}
+
+/* === CARTE FORMULAIRE === */
+.regform-content {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* === TITRE & GROUPES === */
+.regform-content h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+}
+.regform-group {
+  margin-bottom: 18px;
+}
+.regform-group-inline {
+  display: flex;
+  gap: 16px;
+}
+@media (max-width: 576px) {
+  .regform-group-inline { flex-direction: column; }
+}
+.regform-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.regform-group input,
+.regform-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.regform-group input:focus,
+.regform-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* === INDICATIF TÉLÉPHONE === */
+.regform-input-group {
+  display: flex;
+}
+.regform-input-addon {
+  padding: 0 16px;
+  background: #007bff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.regform-input-group input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  flex: 1;
+}
+
+/* === BOUTON SOUMISSION === */
+.regform-submit {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg,#007bff,#0056b3);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.regform-submit:hover {
+  background: linear-gradient(135deg,#0056b3,#003f7f);
+  transform: translateY(-2px);
+}
+
+/* === RÉACTIVITÉ MOBILE === */
+@media (max-width: 768px) {
+  main { flex-direction: column; }
+  .regform-split { flex-direction: column; }
+  .regform-image,
+  .regform { flex: none; width: 100%; height: 300px; }
+  .regform { padding: 20px; }
+}

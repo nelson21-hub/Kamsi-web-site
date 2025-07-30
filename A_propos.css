@@ -1,0 +1,91 @@
+/* about.css */
+
+/* Héritage de index.css */
+@import url('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
+
+/* Reset & base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+.container {
+  width: 90%; max-width: 1200px; margin: auto; padding: 60px 0;
+}
+
+/* Header/Footer */
+.site-header, .site-footer {
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+}
+.site-header .logo { color: #007bff; font-size: 1.8rem; font-weight: bold; }
+nav a { margin: 0 10px; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; }
+.btn-primary { background: #007bff; color: #fff; }
+.btn-secondary { background: #28a745; color: #fff; }
+.btn-primary:hover { background: #0056b3; }
+.btn-secondary:hover { background: #1e7e34; }
+
+/* Sections */
+section { padding: 60px 0; }
+.mission h1 { font-size: 2.5rem; color: #007bff; margin-bottom: 20px; text-align: center; }
+.mission p { font-size: 1.2rem; text-align: center; }
+
+/* Valeurs */
+.values-list {
+  display: flex; flex-wrap: wrap; justify-content: space-around;
+  list-style: none; gap: 30px;
+}
+.values-list li {
+  flex: 1 1 250px; background: #fff; padding: 20px; border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform .3s;
+}
+.values-list li:hover { transform: translateY(-5px); }
+.values-list h3 { color: #28a745; margin-bottom: 10px; }
+
+/* Équipe */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+  gap: 30px;
+}
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+.card-front, .card-back {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  backface-visibility: hidden;
+  transition: transform .6s;
+  position: relative;
+  overflow: hidden;
+}
+.card-front {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 20px;
+}
+.card-front img {
+  width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;
+}
+.card-front h3 { color: #007bff; margin-bottom: 5px; }
+.card-back {
+  transform: rotateY(180deg);
+  padding: 30px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; font-size: .95rem;
+  color: #555;
+}
+.card:hover .card-front { transform: rotateY(-180deg); }
+.card:hover .card-back  { transform: rotateY(0); }
+
+/* Footer */
+.site-footer { padding: 20px 0; font-size: .9rem; color: #777; }
+
+/* Responsive */
+@media(max-width:768px){
+  .values-list { flex-direction: column; align-items: center; }
+}

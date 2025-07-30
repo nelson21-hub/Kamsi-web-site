@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscription – ECG Connecté</title>
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <header class="header">
+    Kamsi
+  </header>
+  <main>
+
+  <div class="regform-split">
+
+    <!-- Partie gauche : image -->
+    <div class="regform-image">
+      
+      <img src="Photo/ECG-blog_how-to-interpret_1.png" alt="Illustration ECG">
+    </div>
+
+    <!-- Partie droite : formulaire -->
+    <div class="regform">
+      <div class="regform-content">
+
+        <form class="regform-form">
+
+          <div class="regform-group-inline">
+            <div class="regform-group">
+              <label for="lastname">Nom</label>
+              <input type="text" id="lastname" placeholder="Dupont" required>
+            </div>
+            <div class="regform-group">
+              <label for="firstname">Prénom</label>
+              <input type="text" id="firstname" placeholder="Jean" required>
+            </div> 
+          </div>
+
+          <div class="regform-group-inline">
+            <div class="regform-group">
+              <label for="country">Pays</label>
+              <select id="country" required>
+                <option value="">Sélectionnez...</option>
+                <optgroup label="Europe">
+                  <option value="FR" data-code="+33">France</option>
+                  <option value="DE" data-code="+49">Allemagne</option>
+                  <option value="ES" data-code="+34">Espagne</option>
+                  <option value="IT" data-code="+39">Italie</option>
+                  <option value="GB" data-code="+44">Royaume-Uni</option>
+                </optgroup>
+                <optgroup label="Afrique">
+                  <option value="NG" data-code="+234">Nigeria</option>
+                  <option value="ZA" data-code="+27">Afrique du Sud</option>
+                  <option value="EG" data-code="+20">Égypte</option>
+                  <option value="KE" data-code="+254">Kenya</option>
+                  <option value="MA" data-code="+212">Maroc</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="regform-group">
+              <label for="city">Ville</label>
+              <input type="text" id="city" placeholder="Paris" required>
+            </div>
+          </div>
+
+          <div class="regform-group">
+            <label for="phone">Téléphone</label>
+            <div class="regform-input-group">
+              <span id="phone-code" class="regform-input-addon">+33</span>
+              <input type="tel" id="phone" placeholder="612345678" required>
+            </div>
+          </div>
+
+          <div class="regform-group">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" placeholder="jean.dupont@example.com" required>
+          </div>
+
+           <div class="regform-group">
+            <label for="Profession">Profession</label>
+            <input type="text" id="Profession" placeholder="Médecin" required>
+          </div>
+
+          <div class="regform-group">
+            <label for="Besoin">Besoin</label>
+            <input type="text" id="Besoin" placeholder="Opération chirurgicale" required>
+          </div>
+
+          <div class="regform-group-inline">
+            <div class="regform-group">
+              <label for="password">Mot de passe</label>
+              <input type="password" id="password" required>
+            </div>
+            <div class="regform-group">
+              <label for="confirm-password">Confirmer le mot de passe</label>
+              <input type="password" id="confirm-password" required>
+            </div>
+          </div>
+
+          <div class="regform-group">
+            <button type="submit" class="regform-submit">M’inscrire</button>
+          </div>
+          
+
+          
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Mise à jour de l'indicatif en fonction du pays
+    const countrySelect = document.getElementById('country');
+    const phoneCodeSpan = document.getElementById('phone-code');
+    countrySelect.addEventListener('change', () => {
+      const code = countrySelect.selectedOptions[0].getAttribute('data-code') || '';
+      phoneCodeSpan.textContent = code;
+    });
+  </script>
+  </main>
+<footer class="footer">© 2025 Kumea. Tous droits réservés.</footer>
+
+</body>
+</html>

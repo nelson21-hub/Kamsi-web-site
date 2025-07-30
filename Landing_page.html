@@ -1,0 +1,143 @@
+<!-- Landing_page.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ECG Connecté – Landing Page</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Votre feuille de style -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Kamsi</div>
+      <nav>
+        <a href="register.html" class="btn btn-primary">Contactez-nous</a>
+         <a href="Login.html" class="btn btn-primary">À propos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container">
+      <h1>SAUVONS DES VIES.</h1>
+      <p class="subtitle">La Santé n'est pas un privilège mais un droit pour tous.</p>
+       </div>
+    </div>
+  </section>
+
+  <!-- FEATURES TIMELINE -->
+  <section id="features" class="features-timeline">
+    <div class="container">
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="text">
+          <h2>ECG en temps réel.</h2>
+          <p>Visualisez instantanément les 12 dérivations ECG directement sur votre mobile ou écran dédié.</p>
+        </div>
+        <div class="image">
+          <img src="Photo/ECG-normal-trace-1024x500.jpg" alt="ECG live">
+        </div>
+      </div>
+
+      <div class="timeline-item reverse" data-aos="fade-left">
+        <div class="text">
+          <h2>Données sécurisées.</h2>
+          <p>La confidentialité de vos données est respectée ainsi que leur intégrité.</p>
+        </div>
+        <div class="image">
+          <img src="Photo/OIP.webp" alt="Historique ECG">
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="text">
+          <h2>Portabilité & simplicité.</h2>
+          <p>Design compact, autonome et compatible avec tous les environnements médicaux.</p>
+        </div>
+        <div class="image">
+          <img src="Photo/cardiomate-evi-10-portee02-1140x960.jpg" alt="Portabilité">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="cta-bottom" data-aos="fade-up">
+    <div class="container">
+      <p>ECG, partout, pour tous.<br>Rejoignez la liste d’attente.</p>
+      <a href="register.html" class="btn btn-secondary">Je m’inscris</a>
+    </div>
+  </section>
+
+  <!-- PARTENAIRES -->
+ <section id="partenaires">
+  
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_190301-removebg-preview.png" alt="Partenaire 1"></div>
+      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_191919-removebg-preview.png" alt="Partenaire 2"></div>
+      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_190159-removebg-preview.png" alt="Partenaire 3"></div>
+      <div class="swiper-slide"><img src="Photo/CHZWCFhJPZRordMD.png" alt="Partenaire 4"></div>
+      <div class="swiper-slide"><img src="/assets/images/partner5.png" alt="Partenaire 5"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    new Swiper('.mySwiper', {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }
+    });
+  });
+</script>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container">
+      <p>© 2025 ECG Connecté. Tous droits réservés.</p>
+      <p>Contact: <a href="mailto:Kamsi@email.com">Kamsi@email.com</a></p>
+      <p>Mentions légales | Politique de confidentialité</p>
+    </div>
+  </footer>
+
+  <!-- Scripts JS (chargés à la fin du body) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

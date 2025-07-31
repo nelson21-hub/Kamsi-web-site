@@ -1,158 +1,139 @@
-/* === RESET & BASE === */
+/* Styles généraux et Responsive */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 html, body {
+  width: 100%;
   height: 100%;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
+
 }
 
-/* === LAYOUT GÉNÉRAL === */
 body {
+  font-size: 16px; /* base comfortable for mobile */
+  
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  /* on enlève le flex centering global pour permettre le scroll */
+  display: block;
+  overflow-x: hidden;
+}
+
+/* Arrière-plan : image pleine largeur avec filtre (flou + obscurci) */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Photo/ECG-blog_how-to-interpret_1.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px) brightness(0.7);
+  z-index: -1;
+}
+
+/* Conteneur du formulaire centré */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+/* Titre du formulaire */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* Mise en page du formulaire */
+.form-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.input-field {
+  flex: 1 1 200px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
-.header {
-  background: #007bff;
-  color: #fff;
-  padding: 16px 32px;
-  font-size: 1.5rem;
-  flex: 0 0 auto;
+.input-field label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
 }
-main {
-  flex: 1 0 auto;
-  display: flex;
-  overflow: hidden;            /* empêche le débordement */
-  background: #f2f3f8;         /* teinte douce derrière */
-}
-.footer {
-  flex: 0 0 auto;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 0.9rem;
-  background: #fff;
-  border-top: 1px solid #e0e0e0;
-  color: #666;
-}
-
-/* === SPLIT IMAGE / FORM === */
-.regform-split {
-  display: flex;
-  width: 100%;
-}
-.regform-image {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-}
-.regform-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('Photo/ECG-blog_how-to-interpret_1.png') center/cover no-repeat;
-  filter: brightness(0.8);
-}
-.regform {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;               /* espace autour du formulaire */
-}
-
-/* === CARTE FORMULAIRE === */
-.regform-content {
-  background: #fff;
-  width: 100%;
-  max-width: 500px;
-  padding: 40px 32px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-/* === TITRE & GROUPES === */
-.regform-content h2 {
-  text-align: center;
-  color: #007bff;
-  margin-bottom: 24px;
-  font-size: 1.75rem;
-}
-.regform-group {
-  margin-bottom: 18px;
-}
-.regform-group-inline {
-  display: flex;
-  gap: 16px;
-}
-@media (max-width: 576px) {
-  .regform-group-inline { flex-direction: column; }
-}
-.regform-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-.regform-group input,
-.regform-group select {
-  width: 100%;
-  padding: 12px;
+.input-field input,
+.input-field select,
+.form-container textarea {
+  padding: 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.2s;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  width: 100%;  
 }
-.regform-group input:focus,
-.regform-group select:focus {
-  border-color: #007bff;
+.input-field input:focus,
+.input-field select:focus,
+.form-container textarea:focus {
   outline: none;
+  border-color: #888;
 }
 
-/* === INDICATIF TÉLÉPHONE === */
-.regform-input-group {
-  display: flex;
-}
-.regform-input-addon {
-  padding: 0 16px;
-  background: #007bff;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
-.regform-input-group input {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  flex: 1;
-}
-
-/* === BOUTON SOUMISSION === */
-.regform-submit {
+/* Bouton d'envoi */
+.button {
   display: block;
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg,#007bff,#0056b3);
-  border: none;
-  border-radius: 8px;
-  color: #fff;
+  padding: 0.75rem;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 1rem;
 }
-.regform-submit:hover {
-  background: linear-gradient(135deg,#0056b3,#003f7f);
-  transform: translateY(-2px);
+.button:hover {
+  background-color: #2980b9;
 }
 
-/* === RÉACTIVITÉ MOBILE === */
+/* Responsive Breakpoints */
 @media (max-width: 768px) {
-  main { flex-direction: column; }
-  .regform-split { flex-direction: column; }
-  .regform-image,
-  .regform { flex: none; width: 100%; height: 300px; }
-  .regform { padding: 20px; }
+  .form-container {
+    padding: 1.5rem;
+    width: 95%;
+    margin: 1.5rem auto;
+  }
+  .form-container h2 {
+    font-size: 1.3rem;
+  }
+  .button {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .form-group {
+    flex-direction: column;
+  }
+  .input-field {
+    flex: 1 1 100%;
+  }
+  .form-container h2 {
+    font-size: 1.2rem;
+  }
+  .button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 }

@@ -1,0 +1,151 @@
+/* Styles généraux et responsive propres */
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html, body {
+width: 100%;
+height: 100%;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #333;
+font-size: 16px;
+}
+
+body {
+background-color: #fafafa;
+overflow-x: hidden;
+}
+
+/* Conflits réparés : plus de marqueurs Git, code unifié pour le style du formulaire */
+
+/* Arrière-plan flou */
+.background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('Photo/ECG-blog_how-to-interpret_1.png');
+background-size: cover;
+background-position: center;
+filter: blur(5px) brightness(0.7);
+z-index: -1;
+}
+
+/* Conteneur du formulaire centré /
+.form-container {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: calc(100vh - 100px); / ajuster selon header/footer */
+padding : 20px; {
+
+
+}       
+
+.form-container .form-content {
+background-color: rgba(255, 255, 255, 0.9);
+padding: 2rem;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+width: 90%;
+max-width: 500px;
+}
+
+/* Titre */
+.form-content h2 {
+text-align: center;
+margin-bottom: 1.5rem;
+color: #333;
+font-size: 1.5rem;
+}
+
+/* Champs de formulaire */
+.form-group {
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+margin-bottom: 1rem;
+}
+
+.input-field {
+flex: 1 1 200px;
+display: flex;
+flex-direction: column;
+}
+
+.input-field label {
+margin-bottom: 0.5rem;
+font-weight: bold;
+color: #555;
+}
+
+.input-field input,
+.input-field select {
+padding: 0.75rem;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 1rem;
+background-color: #fff;
+width: 100%;
+transition: border-color 0.3s;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+outline: none;
+border-color: #007bff;
+}
+
+/* Bouton */
+.button,
+.form-content .regform-submit {
+display: block;
+width: 100%;
+padding: 0.75rem;
+font-size: 1rem;
+font-weight: bold;
+color: #fff;
+background-color: #3498db;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-align: center;
+margin-top: 1rem;
+transition: background-color 0.3s;
+}
+
+.button:hover,
+.form-content .regform-submit:hover {
+background-color: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.form-container {
+min-height: calc(100vh - 80px);
+padding: 15px;
+}
+.form-content {
+padding: 1.5rem;
+width: 95%;
+}
+.form-content h2 {
+font-size: 1.3rem;
+}
+}
+
+@media (max-width: 480px) {
+.form-group {
+flex-direction: column;
+}
+.input-field {
+flex: 1 1 100%;
+}
+.form-content h2 {
+font-size: 1.2rem;
+}
+}

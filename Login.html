@@ -1,141 +1,150 @@
-<!-- a-propos.html -->
 <!DOCTYPE html>
+        
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>ECG Connecté – À propos</title>
-
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Ta feuille de style -->
+  <title>KAMSI – À propos</title>
+  <!-- AOS CSS pour animations -->
+  <link href="A_propos.css" rel="stylesheet" />
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="A_propos.css" />
+  <!-- Notre feuille de style -->
   <link rel="stylesheet" href="A_propos.css" />
 </head>
 <body>
-  <header class="site-header">
+  
+
+  <!-- Hero principal -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
     <div class="container">
-      <a href="Landing_page.html" class="logo">KAMSI</a>
-      <nav>
-
-      </nav>
+      <h1 data-aos="fade-up">Notre mission : la santé accessible</h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Chez KAMSI, nous rêvons d’un avenir où chaque communauté, partout en Afrique et dans les pays en développement, dispose des meilleurs outils médicaux. Nous développons des dispositifs innovants et accessibles pour faire de la santé un droit, pas un privilège.
+      </p>
+      <a href="register.html" class="btn" data-aos="fade-up" data-aos-delay="400">Nous contacter</a>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- Mission -->
-    <section class="mission" data-aos="fade-up">
-      <div class="container">
-        <h1>Notre Mission</h1>
-        <p>
-          Chez <strong>ECG Connecté</strong>, nous voulons rendre le suivi cardiaque accessible à tous, partout.
-          Innovation, fiabilité et empathie guident chacun de nos pas.
-        </p>
+  <!-- Section Mission -->
+  <section class="mission" id="mission" data-aos="fade-up">
+    <div class="container">
+      <h2>Notre projet phare : SONA ECG</h2>
+      <p>
+        SONA ECG est un électrocardiographe connecté révolutionnaire. Il permet aux médecins de réaliser des ECG en temps réel où qu’ils soient, et de partager instantanément les résultats avec des spécialistes. 
+      </p>
+      <p>
+        Notre IA avancée assure une interprétation rapide et fiable des données, réduisant les délais de diagnostic et améliorant la prise en charge des patients. Grâce à SONA ECG, la santé cardiaque devient rapide, précise et accessible à tous.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section Valeurs -->
+  <section class="valeurs" id="valeurs" data-aos="fade-up" data-aos-delay="200">
+    <div class="container">
+      <h2>Nos valeurs</h2>
+      <div class="valeurs-grid">
+        <div class="valeur-item" data-aos="fade-right">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Innovation</h3>
+          <p>Nous mettons en synergie des ingénieurs, développeurs et experts en IA pour créer des outils médicaux révolutionnaires. Nos solutions sont puissantes, intuitives et adaptées aux systèmes de santé .</p>
+        </div>
+        <div class="valeur-item" data-aos="fade-up">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Sécurité et fiabilité</h3>
+          <p>SONA ECG intègre une IA évolutive pour fournir des pré-diagnostics fiables. L’IA renforce le rôle du médecin (et ne le remplace pas), réduisant les imprécisions et garantissant la sécurité du patient à chaque étape.</p>
+        </div>
+        <div class="valeur-item" data-aos="fade-left">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Simplicité</h3>
+          <p>80 % des généralistes manquent de formation ECG, causant des semaines d’attente pour un diagnostic. Avec SONA ECG, ce délai tombe à moins de 30 minutes, même dans les zones isolées. La santé cardiaque devient ainsi accessible à tous.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Valeurs -->
-    <section class="values" data-aos="fade-up" data-aos-delay="200">
-      <div class="container">
-        <h2>Nos Valeurs</h2>
-        <ul class="values-list">
-          <li>
-            <h3>Innovation</h3>
-            <p>Nous repoussons sans cesse les limites de la télémédecine.</p>
-          </li>
-          <li>
-            <h3>Confiance</h3>
-            <p>Sécurité et confidentialité de vos données avant tout.</p>
-          </li>
-          <li>
-            <h3>Simplicité</h3>
-            <p>Des solutions intuitives, pensées pour tous.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Équipe -->
-    <section class="team" data-aos="fade-up" data-aos-delay="400">
-      <div class="container">
-        <h2>Rencontrez l’équipe</h2>
-        <div class="team-grid">
-          <!-- Card template -->
-          <div class="card" data-name="Alexia PELLAN">
-            <div class="card-front">
-              <img src="Photo/Alexia.jpeg.jpg" alt="Alexia PELLAN">
-              <h3>Alexia PELLAN</h3>
-              <p>Directrice artistique</p>
-            </div>
-            <div class="card-back">
-              <p>Formée aux arts visuels, Alexia a donné une âme visuelle forte à notre projet en créant une identité cohérente et impactante.</p>
-            </div>
+  <!-- Section Équipe -->
+  <section class="equipe" id="equipe" data-aos="fade-up" data-aos-delay="400">
+    <div class="container">
+      <h2>Rencontrez l’équipe</h2>
+      <div class="team-grid">
+        <!-- Carte du membre (exemple) -->
+        <div class="card" data-aos="zoom-in">
+          <div class="card-front">
+            <img src="Photo/Alexia.jpeg.jpg" alt="Alexia PELLAN">
+            <h3>Alexia PELLAN</h3>
+            <p>Directrice artistique</p>
           </div>
-          <!-- Répète pour chaque membre -->
-          <div class="card" data-name="Astrid DERVILLE">
-            <div class="card-front">
-              <img src="Photo/ASTRID.jpeg.jpg" alt="Astrid DERVILLE">
-              <h3>Astrid DERVILLE</h3>
-              <p>Coordinatrice projet</p>
-            </div>
-            <div class="card-back">
-              <p>Orchestration millimétrée, rigueur et anticipation : Astrid assure la cohésion et le timing de notre développement.</p>
-            </div>
+          <div class="card-back">
+            <p>Formée aux arts visuels, Alexia a créé une identité visuelle forte et cohérente pour notre projet.</p>
           </div>
-          <div class="card" data-name="Ranto Diego RAMANANDRAIBE">
-            <div class="card-front">
-              <img src="Photo/Ranto.jpeg.jpg" alt="Ranto Diego RAMANANDRAIBE">
-              <h3>Ranto Diego RAMANANDRAIBE</h3>
-              <p>Responsable technique</p>
-            </div>
-            <div class="card-back">
-              <p>Ingénieur passionné, Ranto transforme chaque idée en prototype fiable grâce à sa rigueur scientifique et son esprit d’innovation.</p>
-            </div>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <div class="card-front">
+            <img src="Photo/ASTRID.jpeg.jpg" alt="Astrid DERVILLE">
+            <h3>Astrid DERVILLE</h3>
+            <p>Coordinatrice projet</p>
           </div>
-          <div class="card" data-name="Matthieu COURNÉ">
-            <div class="card-front">
-              <img src="Photo/Mathieu.jpeg.jpg" alt="Mathieu COURNÉ">
-              <h3>Mathieu COURNÉ</h3>
-              <p>Analyste marché</p>
-            </div>
-            <div class="card-back">
-              <p>Expert Gen Z et pricing, Mathieu ancre nos ambitions dans la réalité économique grâce à ses analyses pointues.</p>
-            </div>
+          <div class="card-back">
+            <p>Orchestration rigoureuse : Astrid veille à la cohésion de l’équipe et au respect du planning.</p>
           </div>
-          <div class="card" data-name="Eloïse LANGLAIS">
-            <div class="card-front">
-              <img src="Photo/WhatsApp Image 2025-07-15 à 13.49.15_09ddbc73.jpg" alt="Eloïse LANGLAIS">
-              <h3>Eloïse LANGLAIS</h3>
-              <p>Responsable financière</p>
-            </div>
-            <div class="card-back">
-              <p>Rigueur budgétaire et anticipation : Eloïse assure la stabilité financière pour faire avancer le projet en toute sérénité.</p>
-            </div>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <div class="card-front">
+            <img src="Photo/Ranto.jpeg.jpg" alt="Ranto Diego RAMANANDRAIBE">
+            <h3>Ranto Diego RAMANANDRAIBE</h3>
+            <p>Responsable technique</p>
           </div>
-          <div class="card" data-name="Gloire MATHE">
-            <div class="card-front">
-              <img src="Photo/WhatsApp Image 2025-05-21 à 17.37.24_35b27d47.jpg" alt="Gloire MATHE">
-              <h3>Gloire MATHE</h3>
-              <p>Responsable électronique</p>
-            </div>
-            <div class="card-back">
-              <p>Architecte électronique, Gloire transforme chaque contrainte en solution matérielle fiable et performante.</p>
-            </div>
+          <div class="card-back">
+            <p>Ingénieur passionné, Ranto transforme chaque idée en prototype fiable grâce à son expertise scientifique.</p>
+          </div>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <div class="card-front">
+            <img src="Photo/Mathieu.jpeg.jpg" alt="Mathieu COURNÉ">
+            <h3>Mathieu COURNÉ</h3>
+            <p>Analyste marché</p>
+          </div>
+          <div class="card-back">
+            <p>Expert Gen Z et pricing, Mathieu ancre nos ambitions dans la réalité économique par ses analyses pointues.</p>
+          </div>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <div class="card-front">
+            <img src="Photo/WhatsApp Image 2025-07-15 à 13.49.15_09ddbc73.jpg" alt="Eloïse LANGLAIS">
+            <h3>Eloïse LANGLAIS</h3>
+            <p>Responsable financière</p>
+          </div>
+          <div class="card-back">
+            <p>Rigueur budgétaire : Eloïse assure la stabilité financière et anticipe les besoins pour faire avancer le projet sereinement.</p>
+          </div>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <div class="card-front">
+            <img src="Photo/WhatsApp Image 2025-05-21 à 17.37.24_35b27d47.jpg" alt="Gloire MATHE">
+            <h3>Gloire MATHE</h3>
+            <p>Responsable électronique</p>
+          </div>
+          <div class="card-back">
+            <p>Architecte électronique, Gloire transforme chaque contrainte en solution matérielle fiable et performante.</p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer" data-aos="fade-up" data-aos-delay="600">
     <div class="container">
-      <p>© 2025 ECG Connecté. Tous droits réservés.</p>
+      <p>© 2025 KAMSI. Tous droits réservés.</p>
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- JS : AOS et initialisation -->
   <script src="about.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
 </html>

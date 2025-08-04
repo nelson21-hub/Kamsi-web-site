@@ -1,91 +1,326 @@
-/* about.css */
-
-/* Héritage de index.css */
-@import url('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
-
-/* Reset & base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Styles généraux et réinitialisation */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8f9fa;
+  font-family: Arial, sans-serif;
   color: #333;
+  line-height: 1.6;
+  background-color: #fafafa;
+  font-size: 16px; /* base comfortable for mobile */
 }
 .container {
-  width: 90%; max-width: 1200px; margin: auto; padding: 60px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* Header/Footer */
-.site-header, .site-footer {
-  background: #fff;
-  border-bottom: 1px solid #eaeaea;
+/* En-tête : barre fixe en haut */
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3498db;
+  text-decoration: none;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+.nav a:hover {
+  color: #3498db;
+}
+
+/* Hero principal */
+.hero {
+  position: relative;
+  height: 60vh;               /* réduit sur mobile */
+  min-height: 300px;          /* pas trop petit */
+  background: url('Photo/ECG-blog_how-to-interpret_1.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.hero .container {
+  position: relative;
   text-align: center;
+  z-index: 1;
 }
-.site-header .logo { color: #007bff; font-size: 1.8rem; font-weight: bold; }
-nav a { margin: 0 10px; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; }
-.btn-primary { background: #007bff; color: #fff; }
-.btn-secondary { background: #28a745; color: #fff; }
-.btn-primary:hover { background: #0056b3; }
-.btn-secondary:hover { background: #1e7e34; }
-
-/* Sections */
-section { padding: 60px 0; }
-.mission h1 { font-size: 2.5rem; color: #007bff; margin-bottom: 20px; text-align: center; }
-.mission p { font-size: 1.2rem; text-align: center; }
-
-/* Valeurs */
-.values-list {
-  display: flex; flex-wrap: wrap; justify-content: space-around;
-  list-style: none; gap: 30px;
+.hero h1 {
+  font-size: 2rem;            /* adaptée en mobile */
+  margin-bottom: 1rem;
 }
-.values-list li {
-  flex: 1 1 250px; background: #fff; padding: 20px; border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform .3s;
+.hero p {
+  max-width: 90%;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
 }
-.values-list li:hover { transform: translateY(-5px); }
-.values-list h3 { color: #28a745; margin-bottom: 10px; }
+.btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+.btn:hover {
+  background-color: #2980b9;
+}
 
-/* Équipe */
+/* Section Mission */
+.mission {
+  background-color: #fff;
+  padding: 2rem 1rem;
+}
+.mission h2 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+.mission p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+/* Section Valeurs */
+.valeurs {
+  background-color: #f2f6f9;
+  padding: 2rem 1rem;
+}
+.valeurs h2 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+.valeurs-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.valeur-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.valeur-item i {
+  font-size: 2rem;
+  color: #3498db;
+  margin-bottom: 0.75rem;
+}
+.valeur-item h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+.valeur-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Section Équipe */
+.equipe {
+  background-color: #fff;
+  padding: 2rem 1rem;
+}
+.equipe h2 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
-  gap: 30px;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  justify-items: center;
 }
 .card {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 3/4;         /* maintient ratio fixe */
   perspective: 1000px;
-  cursor: pointer;
+  position: relative;
 }
 .card-front, .card-back {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
   backface-visibility: hidden;
-  transition: transform .6s;
-  position: relative;
   overflow: hidden;
+  position: absolute;
+  top: 0; left: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.6s;
 }
 .card-front {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 20px;
+  background-color: #fff;
+  text-align: center;
 }
 .card-front img {
-  width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
 }
-.card-front h3 { color: #007bff; margin-bottom: 5px; }
+.card-front h3 {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+.card-front p {
+  font-size: 0.85rem;
+  color: #777;
+}
 .card-back {
+  background-color: #3498db;
+  color: #fff;
   transform: rotateY(180deg);
-  padding: 30px;
-  display: flex; align-items: center; justify-content: center;
-  text-align: center; font-size: .95rem;
-  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
 }
-.card:hover .card-front { transform: rotateY(-180deg); }
-.card:hover .card-back  { transform: rotateY(0); }
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+.card:hover .card-back {
+  transform: rotateY(360deg);
+}
 
-/* Footer */
-.site-footer { padding: 20px 0; font-size: .9rem; color: #777; }
+/* Pied de page */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+.site-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+}
 
-/* Responsive */
-@media(max-width:768px){
-  .values-list { flex-direction: column; align-items: center; }
+/* Media Queries */
+@media (max-width: 1024px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .mission h2,
+  .valeurs h2,
+  .equipe h2 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+    min-height: 250px;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  .nav ul {
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 30vh;
+    min-height: 200px;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  .mission p,
+  .valeur-item p {
+    font-size: 0.85rem;
+  }
+  .valeur-item h3 {
+    font-size: 1.1rem;
+  }
+  .card-front h3 {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  nav a.btn {
+    margin-top: 5px;
+  }
+}
+/* === NAVIGATION RESPONSIVE MOBILE === */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  nav a.btn {
+    padding: 10px 14px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+  }
 }

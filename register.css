@@ -36,92 +36,151 @@ body {
   z-index: -1;
 }
 
-/* Conteneur du formulaire centré */
+/* Conteneur du formulaire centré - Ajusté pour plus de champs */
 .form-container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 95%;
+  max-width: 700px;
   margin: 2rem auto;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 /* Titre du formulaire */
 .form-container h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 /* Mise en page du formulaire */
 .form-group {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 .input-field {
-  flex: 1 1 200px;
+  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 .input-field label {
   margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #555;
+  font-weight: 600;
+  color: #444;
+  font-size: 0.95rem;
 }
 .input-field input,
 .input-field select,
-.form-container textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.input-field textarea {
+  padding: 0.85rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
   font-size: 1rem;
   background-color: #fff;
-  width: 100%;  
+  width: 100%;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Styles pour les placeholders */
+.input-field input::placeholder,
+.input-field textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 .input-field input:focus,
 .input-field select:focus,
-.form-container textarea:focus {
+.input-field textarea:focus {
   outline: none;
-  border-color: #888;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Styles pour les textarea */
+.input-field textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Styles pour les checkboxes */
+.checkbox-field {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-field input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+.checkbox-field label {
+  margin-bottom: 0;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /* Bouton d'envoi */
 .button {
   display: block;
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #fff;
-  background-color: #3498db;
+  background: linear-gradient(135deg, #3498db, #2980b9);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 .button:hover {
-  background-color: #2980b9;
+  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+.button:active {
+  transform: translateY(0);
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
   .form-container {
-    padding: 1.5rem;
-    width: 95%;
-    margin: 1.5rem auto;
+    padding: 2rem;
+    width: 98%;
+    margin: 1rem auto;
+    max-height: 95vh;
   }
   .form-container h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   .button {
-    padding: 0.65rem;
-    font-size: 0.95rem;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+  .input-field {
+    flex: 1 1 100%;
+  }
+  .form-group {
+    gap: 1rem;
   }
 }
 @media (max-width: 480px) {
@@ -132,17 +191,43 @@ body {
     flex: 1 1 100%;
   }
   .form-container h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .button {
-    padding: 0.6rem;
-    font-size: 0.9rem;
-
+    padding: 0.8rem;
+    font-size: 0.95rem;
   }
   .form-container {
     padding: 1.5rem;
+    margin: 0.5rem auto;
+  }
+  .input-field input,
+  .input-field select,
+  .input-field textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
   }
 }
+
+/* Scrollbar personnalisée pour le formulaire */
+.form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 @media (max-width: 480px) {
   .site-header .container {
     flex-direction: column;

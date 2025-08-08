@@ -1,4 +1,3 @@
-<!-- Landing_page.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,16 +5,88 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>ECG Connecté – Landing Page</title>
 
-  <!-- Swiper CSS -->
+  <!-- Liens CSS externes -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Votre feuille de style -->
+  
+  <!-- Feuille de style actuelle -->
   <link rel="stylesheet" href="index.css" />
-  <script src="language-switcher.js"></script>
- 
+  
+  <!-- Styles supplémentaires pour burger menu, panneau latéral, etc. -->
+  <style>
+    /* Mise en page de l'en-tête : hamburger à gauche, logo au centre, nav et icônes à droite */
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left, .header-right {
+      display: flex;
+      align-items: center;
+    }
+    /* Bouton hamburger */
+    .burger-menu {
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+    .burger-menu .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    /* Panneau latéral par défaut caché */
+    .side-panel {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    }
+    .side-panel.open {
+      width: 250px;
+    }
+    .side-panel a {
+      display: block;
+      padding: 8px 32px;
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .side-panel .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2em;
+      cursor: pointer;
+    }
+    /* Espacement entre l'icône email et le sélecteur de langue */
+    .header-extras > * {
+      margin-left: 15px;
+    }
+    .email-icon {
+      font-size: 1.5em;
+      color: inherit;
+      text-decoration: none;
+    }
+    .language-selector a {
+      color: inherit;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    /* Espacement entre nav et icônes dans header */
+    .header-right nav {
+      margin-right: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,13 +94,44 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <div class="logo">Kamsi</div>
-      <nav>
-        <a href="register.html" class="btn btn-primary">Contactez-nous</a>
-         <a href="Login.html" class="btn btn-primary">À propos</a>
-      </nav>
+      <div class="header-left">
+        <!-- Icône hamburger -->
+        <div class="burger-menu" onclick="toggleSidePanel()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <!-- Logo -->
+        <div class="logo">Kamsi</div>
+      </div>
+      <div class="header-right">
+        <!-- Liens de navigation existants -->
+        <nav>
+          <a href="register.html" class="btn btn-primary">Inscription</a>
+          <a href="Login.html" class="btn btn-primary">A propos</a>
+        </nav>
+        <!-- Icône email et sélecteur de langue -->
+        <div class="header-extras">
+          <!-- Lien vers pied de page (coordonnées) -->
+          <a href="#contact" class="email-icon" title="Coordonnées de l'entreprise">&#9993;</a>
+          <!-- Sélecteur de langue -->
+          <div class="language-selector">
+            <a href="index.html">FR</a> | <a href="index-en.html">EN</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
+
+  <!-- Panneau latéral ouvert par le menu hamburger -->
+  <div id="sidePanel" class="side-panel">
+    <span class="close-btn" onclick="toggleSidePanel()">&times;</span>
+    <!-- Liens vers les autres pages du site -->
+    <a href="index.html">Accueil</a>
+    <a href="register.html">Inscription</a>
+    <a href="Login.html">A propos</a>
+    <!-- Ajouter d'autres liens si nécessaire -->
+  </div>
 
   <!-- HERO -->
   <section class="hero" data-aos="fade-up">
@@ -44,12 +146,12 @@
     <div class="container">
 
       <div class="timeline-item" data-aos="fade-right">
+        <div class="image">
+          <img src="Photo/ECG-normal-trace-1024x500.jpg" alt="ECG live">
+        </div>
         <div class="text">
           <h2>ECG en temps réel.</h2>
           <p>Visualisez instantanément les 12 dérivations ECG directement sur votre mobile ou écran dédié.</p>
-        </div>
-        <div class="image">
-          <img src="Photo/ECG-normal-trace-1024x500.jpg" alt="ECG live">
         </div>
       </div>
 
@@ -64,12 +166,12 @@
       </div>
 
       <div class="timeline-item" data-aos="fade-right">
+        <div class="image">
+          <img src="Photo/cardiomate-evi-10-portee02-1140x960.jpg" alt="Portabilité">
+        </div>
         <div class="text">
           <h2>Portabilité & simplicité.</h2>
           <p>Design compact, autonome et compatible avec tous les environnements médicaux.</p>
-        </div>
-        <div class="image">
-          <img src="Photo/cardiomate-evi-10-portee02-1140x960.jpg" alt="Portabilité">
         </div>
       </div>
 
@@ -84,56 +186,7 @@
     </div>
   </section>
 
-  <!-- PARTENAIRES -->
- <section id="partenaires">
-  
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_190301-removebg-preview.png" alt="Partenaire 1"></div>
-      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_191919-removebg-preview.png" alt="Partenaire 2"></div>
-      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_190159-removebg-preview.png" alt="Partenaire 3"></div>
-      <div class="swiper-slide"><img src="Photo/CHZWCFhJPZRordMD.png" alt="Partenaire 4"></div>
-      
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.mySwiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      breakpoints: {
-        480: { 
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        768: { 
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
-        1024: { 
-          slidesPerView: 4,
-          spaceBetween: 40
-        }
-      }
-    });
-  });
-</script>
-
-  <!-- MODAL -->
+  <!-- MODAL (inchangé) -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span id="modal-close" class="modal-close">&times;</span>
@@ -142,19 +195,25 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="site-footer" data-aos="fade-up">
+  <footer id="contact" class="site-footer" data-aos="fade-up">
     <div class="container">
+      <!-- Insérer ici les coordonnées de l'entreprise -->
       <p>© 2025 ECG Connecté. Tous droits réservés.</p>
-      <p>Contact: <a href="mailto:Kamsi@email.com">Kamsi@email.com</a></p>
       <p>Mentions légales | Politique de confidentialité</p>
     </div>
   </footer>
 
-  <!-- Scripts JS (chargés à la fin du body) -->
+  <!-- Scripts JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="index.js"></script>
-  <script src="language-switcher.js"></script>
 
+  <!-- Script pour activer/désactiver le panneau latéral -->
+  <script>
+    function toggleSidePanel() {
+      var panel = document.getElementById("sidePanel");
+      panel.classList.toggle("open");
+    }
+  </script>
 </body>
 </html>

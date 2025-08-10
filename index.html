@@ -12,81 +12,7 @@
   <!-- Feuille de style actuelle -->
   <link rel="stylesheet" href="index.css" />
   
-  <!-- Styles supplémentaires pour burger menu, panneau latéral, etc. -->
-  <style>
-    /* Mise en page de l'en-tête : hamburger à gauche, logo au centre, nav et icônes à droite */
-    .site-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .header-left, .header-right {
-      display: flex;
-      align-items: center;
-    }
-    /* Bouton hamburger */
-    .burger-menu {
-      display: inline-block;
-      cursor: pointer;
-      margin-right: 15px;
-    }
-    .burger-menu .bar {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
-    /* Panneau latéral par défaut caché */
-    .side-panel {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      background-color: #fff;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-    }
-    .side-panel.open {
-      width: 250px;
-    }
-    .side-panel a {
-      display: block;
-      padding: 8px 32px;
-      text-decoration: none;
-      font-size: 1.2em;
-      color: #333;
-    }
-    .side-panel .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 2em;
-      cursor: pointer;
-    }
-    /* Espacement entre l'icône email et le sélecteur de langue */
-    .header-extras > * {
-      margin-left: 15px;
-    }
-    .email-icon {
-      font-size: 1.5em;
-      color: inherit;
-      text-decoration: none;
-    }
-    .language-selector a {
-      color: inherit;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-    /* Espacement entre nav et icônes dans header */
-    .header-right nav {
-      margin-right: 20px;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -101,36 +27,44 @@
           <div class="bar"></div>
           <div class="bar"></div>
         </div>
-        <!-- Logo -->
-        <div class="logo">Kamsi</div>
+        <!-- Logo à côté du burger -->
+        <div class="logo">Découvrir KAMSI</div>
       </div>
+      
+      <!-- Logo centré -->
+      <div class="logo-container">
+        <div class="logo-center">KAMSI</div>
+      </div>
+      
       <div class="header-right">
         <!-- Liens de navigation existants -->
         <nav>
-          <a href="register.html" class="btn btn-primary">Inscription</a>
-          <a href="Login.html" class="btn btn-primary">A propos</a>
-        </nav>
-        <!-- Icône email et sélecteur de langue -->
-        <div class="header-extras">
-          <!-- Lien vers pied de page (coordonnées) -->
+          <!-- Icône email et sélecteur de langue sur la même ligne -->
           <a href="#contact" class="email-icon" title="Coordonnées de l'entreprise">&#9993;</a>
-          <!-- Sélecteur de langue -->
           <div class="language-selector">
             <a href="index.html">FR</a> | <a href="index-en.html">EN</a>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- Panneau latéral ouvert par le menu hamburger -->
+  <!-- Panneau latéral amélioré -->
   <div id="sidePanel" class="side-panel">
-    <span class="close-btn" onclick="toggleSidePanel()">&times;</span>
-    <!-- Liens vers les autres pages du site -->
-    <a href="index.html">Accueil</a>
-    <a href="register.html">Inscription</a>
-    <a href="Login.html">A propos</a>
-    <!-- Ajouter d'autres liens si nécessaire -->
+    <div class="side-panel-header">
+      <span class="close-btn" onclick="toggleSidePanel()">
+        <div class="close-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </span>
+    </div>
+    <div class="side-panel-content">
+      <a href="index.html" class="side-link active">Accueil</a>
+      <a href="register.html" class="side-link">Inscription</a>
+              <a href="About.html" class="side-link">A propos</a>
+      <a href="#contact" class="side-link">Contact</a>
+    </div>
   </div>
 
   <!-- HERO -->

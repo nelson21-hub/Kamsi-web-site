@@ -17,11 +17,6 @@
 
   <div class="regform-split">
 
-
-          
-
-        </form>
-
   <div class="background"></div>
   <main class="form-container">
     <h2>Registration</h2>
@@ -29,61 +24,123 @@
       <div class="form-group">
         <div class="input-field">
           <label for="nom">Last Name</label>
-          <input type="text" id="nom" name="nom" required>
+          <input type="text" id="nom" name="nom" placeholder="John" required>
         </div>
         <div class="input-field">
           <label for="prenom">First Name</label>
-          <input type="text" id="prenom" name="prenom" required>
+          <input type="text" id="prenom" name="prenom" placeholder="Doe" required>
         </div>
-
       </div>
+      
+      <div class="form-group">
+        <div class="input-field">
+          <label for="date_naissance">Date of Birth</label>
+          <input type="date" id="date_naissance" name="date_naissance" required>
+        </div>
+        <div class="input-field">
+          <label for="genre">Gender</label>
+          <select id="genre" name="genre" required>
+            <option value="">-- Choose a gender --</option>
+            <option value="homme">Male</option>
+            <option value="femme">Female</option>
+            <option value="autre">Other</option>
+          </select>
+        </div>
+      </div>
+
       <div class="form-group">
         <div class="input-field">
           <label for="pays">Country</label>
           <select id="pays" name="pays" required>
             <option value="">-- Choose a country --</option>
             <option value="France">France</option>
-            <option value="FR">France</option>
+            <option value="Belgique">Belgium</option>
+            <option value="Suisse">Switzerland</option>
+            <option value="Canada">Canada</option>
             <option value="US">United States</option>
-            <option value="Autre">Other</option>
             <option value="Autre">Other</option>
           </select>
         </div>
         <div class="input-field">
           <label for="ville">City</label>
-          <input type="text" id="ville" name="ville" required>
+          <input type="text" id="ville" name="ville" placeholder="Paris" required>
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="input-field">
+          <label for="code_postal">Postal Code</label>
+          <input type="text" id="code_postal" name="code_postal" placeholder="75001" required>
+        </div>
+        <div class="input-field">
+          <label for="adresse">Address</label>
+          <input type="text" id="adresse" name="adresse" placeholder="123 Peace Street" required>
+        </div>
+      </div>
+
       <div class="form-group">
         <div class="input-field">
           <label for="telephone">Phone</label>
-          <input type="tel" id="telephone" name="telephone" required>
+          <input type="tel" id="telephone" name="telephone" placeholder="+33 1 23 45 67 89" required>
         </div>
         <div class="input-field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
         </div>
       </div>
+
       <div class="form-group">
         <div class="input-field">
           <label for="profession">Profession</label>
-          <input type="text" id="profession" name="profession">
+          <input type="text" id="profession" name="profession" placeholder="Engineer">
         </div>
         <div class="input-field">
-          <label for="besoin">Need</label>
-          <input type="text" id="besoin" name="besoin">
+          <label for="entreprise">Company</label>
+          <input type="text" id="entreprise" name="entreprise" placeholder="Company name">
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="input-field">
+          <label for="besoin">Primary Need</label>
+          <select id="besoin" name="besoin" required>
+            <option value="">-- Choose your need --</option>
+            <option value="surveillance">Cardiac monitoring</option>
+            <option value="prevention">Prevention</option>
+            <option value="suivi">Medical follow-up</option>
+            <option value="urgence">Emergency</option>
+            <option value="autre">Other</option>
+          </select>
+        </div>
+       
+        <div class="input-field">
+          <label for="urgence_contact">Emergency Contact</label>
+          <input type="text" id="urgence_contact" name="urgence_contact" placeholder="Name and phone number">
+        </div>
+      </div>
+
       <div class="form-group">
         <div class="input-field">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
         </div>
         <div class="input-field">
           <label for="confirm">Confirm Password</label>
-          <input type="password" id="confirm" name="confirm" required>
+          <input type="password" id="confirm" name="confirm" placeholder="••••••••" required>
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="input-field checkbox-field">
+          <input type="checkbox" id="conditions" name="conditions" required>
+          <label for="conditions">I accept the terms of use</label>
+        </div>
+        <div class="input-field checkbox-field">
+          <input type="checkbox" id="newsletter" name="newsletter">
+          <label for="newsletter">I wish to receive the newsletter</label>
+        </div>
+      </div>
+
       <button type="submit" class="button">Register</button>
     </form>
   </main>

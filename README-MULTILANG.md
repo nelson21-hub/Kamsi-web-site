@@ -9,12 +9,12 @@ Ce système permet de basculer dynamiquement entre les versions françaises et a
 ### Pages françaises (originales)
 - `index.html` - Page d'accueil
 - `register.html` - Page d'inscription
-- `Login.html` - Page "À propos"
+- `About.html` - Page "À propos"
 
 ### Pages anglaises (nouvelles)
 - `index-en.html` - Page d'accueil (anglais)
 - `register-en.html` - Page d'inscription (anglais)
-- `Login-en.html` - Page "À propos" (anglais)
+- `About-en.html` - Page "À propos" (anglais)
 
 ### Scripts
 - `language-switcher.js` - Script de changement de langue
@@ -37,12 +37,12 @@ Le script détecte automatiquement :
 // Français → Anglais
 'index.html' → 'index-en.html'
 'register.html' → 'register-en.html'
-'Login.html' → 'Login-en.html'
+'About.html' → 'About-en.html'
 
 // Anglais → Français
 'index-en.html' → 'index.html'
 'register-en.html' → 'register.html'
-'Login-en.html' → 'Login.html'
+'About-en.html' → 'About.html'
 ```
 
 ## 🚀 Installation et utilisation
@@ -55,8 +55,8 @@ périsafe/
 ├── index-en.html ✅
 ├── register.html ✅
 ├── register-en.html ✅
-├── Login.html ✅
-├── Login-en.html ✅
+├── About.html ✅
+├── About-en.html ✅
 └── language-switcher.js ✅
 ```
 

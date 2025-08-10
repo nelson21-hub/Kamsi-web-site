@@ -1,4 +1,3 @@
-<!-- Landing_page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Connected ECG – Landing Page</title>
 
-  <!-- Swiper CSS -->
+  <!-- External CSS links -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Votre feuille de style -->
+  
+  <!-- Current stylesheet -->
   <link rel="stylesheet" href="index.css" />
- 
+  
 </head>
 
 <body>
@@ -22,13 +19,52 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <div class="logo">Kamsi</div>
-      <nav>
-        <a href="register-en.html" class="btn btn-primary">Contact Us</a>
-         <a href="Login-en.html" class="btn btn-primary">About</a>
-      </nav>
+      <div class="header-left">
+        <!-- Hamburger icon -->
+        <div class="burger-menu" onclick="toggleSidePanel()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <!-- Logo next to burger -->
+        <div class="logo">Discover KAMSI</div>
+      </div>
+      
+      <!-- Centered logo -->
+      <div class="logo-container">
+        <div class="logo-center">KAMSI</div>
+      </div>
+      
+      <div class="header-right">
+        <!-- Existing navigation links -->
+        <nav>
+          <!-- Email icon and language selector on the same line -->
+          <a href="#contact" class="email-icon" title="Company contact information">&#9993;</a>
+          <div class="language-selector">
+            <a href="index.html">FR</a> | <a href="index-en.html">EN</a>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
+
+  <!-- Improved side panel -->
+  <div id="sidePanel" class="side-panel">
+    <div class="side-panel-header">
+      <span class="close-btn" onclick="toggleSidePanel()">
+        <div class="close-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </span>
+    </div>
+    <div class="side-panel-content">
+      <a href="index-en.html" class="side-link active">Home</a>
+      <a href="register-en.html" class="side-link">Registration</a>
+      <a href="About-en.html" class="side-link">About</a>
+      <a href="#contact" class="side-link">Contact</a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" data-aos="fade-up">
@@ -43,12 +79,12 @@
     <div class="container">
 
       <div class="timeline-item" data-aos="fade-right">
+        <div class="image">
+          <img src="Photo/ECG-normal-trace-1024x500.jpg" alt="ECG live">
+        </div>
         <div class="text">
           <h2>Real-time ECG.</h2>
           <p>Instantly visualize all 12 ECG leads directly on your mobile or dedicated screen.</p>
-        </div>
-        <div class="image">
-          <img src="Photo/ECG-normal-trace-1024x500.jpg" alt="ECG live">
         </div>
       </div>
 
@@ -63,12 +99,12 @@
       </div>
 
       <div class="timeline-item" data-aos="fade-right">
+        <div class="image">
+          <img src="Photo/cardiomate-evi-10-portee02-1140x960.jpg" alt="Portability">
+        </div>
         <div class="text">
           <h2>Portability & simplicity.</h2>
           <p>Compact design, autonomous and compatible with all medical environments.</p>
-        </div>
-        <div class="image">
-          <img src="Photo/cardiomate-evi-10-portee02-1140x960.jpg" alt="Portability">
         </div>
       </div>
 
@@ -83,56 +119,7 @@
     </div>
   </section>
 
-  <!-- PARTENAIRES -->
- <section id="partenaires">
-  
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_190301-removebg-preview.png" alt="Partner 1"></div>
-      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_191919-removebg-preview.png" alt="Partner 2"></div>
-      <div class="swiper-slide"><img src="Photo/Capture_d_écran_2025-07-13_190159-removebg-preview.png" alt="Partner 3"></div>
-      <div class="swiper-slide"><img src="Photo/CHZWCFhJPZRordMD.png" alt="Partner 4"></div>
-      
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.mySwiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      breakpoints: {
-        480: { 
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        768: { 
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
-        1024: { 
-          slidesPerView: 4,
-          spaceBetween: 40
-        }
-      }
-    });
-  });
-</script>
-
-  <!-- MODAL -->
+  <!-- MODAL (unchanged) -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span id="modal-close" class="modal-close">&times;</span>
@@ -141,17 +128,25 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="site-footer" data-aos="fade-up">
+  <footer id="contact" class="site-footer" data-aos="fade-up">
     <div class="container">
+      <!-- Insert company contact information here -->
       <p>© 2025 Connected ECG. All rights reserved.</p>
-      <p>Contact: <a href="mailto:Kamsi@email.com">Kamsi@email.com</a></p>
       <p>Legal Notice | Privacy Policy</p>
     </div>
   </footer>
 
-  <!-- Scripts JS (chargés à la fin du body) -->
+  <!-- JS Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="index.js"></script>
+
+  <!-- Script to activate/deactivate side panel -->
+  <script>
+    function toggleSidePanel() {
+      var panel = document.getElementById("sidePanel");
+      panel.classList.toggle("open");
+    }
+  </script>
 </body>
 </html> 
